@@ -1,5 +1,6 @@
 package com.bogo.myfirstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
             val n2 =n2String.toInt()
             sum = n1 + n2
             resultTv.text = sum.toString()
+
+            val intent = Intent(this,ResultActivity::class.java)
+            intent.putExtra("sum",sum)
+            startActivity(intent)
         }
     }
 
